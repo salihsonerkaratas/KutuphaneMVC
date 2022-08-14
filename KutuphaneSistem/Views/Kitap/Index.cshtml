@@ -1,0 +1,58 @@
+﻿@using KutuphaneSistem.Models.Entity
+@model List<TBLKİTAP>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<head>
+    <title>Kitaplar</title>
+</head>
+
+<h2>Kitaplar</h2>
+
+@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+{
+
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak Kitap Adını Girin: &nbsp; </b><br />
+        @Html.TextBox("p", "Aramak İstediğiniz Kitap Adını Girin", new { @class = "form-control"})
+        <input type="submit" value="ARA" style="margin-top:10px"/>
+    </div>
+}
+
+
+<table class="table table-striped">
+    <tr style="background-color:#f8b02e">
+        <th>ID</th>
+        <th>KİTAP ADI</th>
+        <th>YAZAR</th>
+        <th>KATEGORİ</th>
+        <th>B.YILI</th>
+        <th>YAYINEVİ</th>
+        <th>SAYFA</th>
+        <th>DURUM</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+
+    @foreach (var ktp in Model)
+    {
+        <tr>
+            <td>@ktp.ID</td>
+            <td>@ktp.AD</td>
+            <td>@ktp.TBLYAZAR.AD @ktp.TBLYAZAR.SOYAD </td>
+            <td>@ktp.TBLKATEGORİ.AD</td>
+            <td>@ktp.BASIMYIL</td>
+            <td>@ktp.YAYINEVİ</td>
+            <td>@ktp.SAYFA</td>
+            <td>@ktp.DURUM</td>
+            <td>
+                @Html.ActionLink("SİL", "KitapSil", new { id = ktp.ID },
+            new { @class = "btn btn-danger", onclick = "return confirm('Silmek İstiyor Musunuz?')" })
+            </td>
+            <td> <a href="/Kitap/KitapGetir/@ktp.ID" class="btn btn-success">GÜNCELLE</a> </td>
+        </tr>
+    }
+</table>
+<a href="/Kitap/KitapEkle/" class="btn btn-primary" style="margin-bottom:10px">Kitap Ekle</a>
+

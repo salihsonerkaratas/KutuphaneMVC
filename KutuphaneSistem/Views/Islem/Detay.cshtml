@@ -1,0 +1,42 @@
+﻿@model KutuphaneSistem.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<head>
+    <title>Detaylar</title>
+</head>
+@using (Html.BeginForm("Detay", "İslem", FormMethod.Post))
+{
+    <br />
+    <div class="form-group">
+        <label>İşlem Numarası</label>
+        @Html.TextBoxFor(i => i.ID, new { @class = "form-control" })
+        <br />
+        <label>Kitap</label>
+        @Html.TextBoxFor(i => i.TBLKİTAP.AD, new { @class = "form-control" })
+        <br />
+        <label>Üye</label>
+        @Html.TextBoxFor(i => i.TBLUYELER.AD, new { @class = "form-control" })
+        <br />
+        <label>Personel</label>
+        @Html.TextBoxFor(i => i.TBLPERSONEL.PERSONEL, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(i => i.ALISTARIHI, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Verilmesi Gereken Tarih</label>
+        @Html.TextBoxFor(i => i.IADETARIH, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Getirdiği Tarih</label>
+        @Html.TextBoxFor(i => i.GETIRILENTARIH, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Geç Gelen Gün Sayısı</label>
+        <input type="text" class="form-control" id="GecGun" value="@ViewBag.dgr" />
+    </div>
+    <div>
+        @*<button class="btn btn-warning">Geri Dön</button>*@
+    </div>
+}
+
+

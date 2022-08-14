@@ -1,0 +1,28 @@
+﻿@using KutuphaneSistem.Models.Entity
+@model List<TBLDUYURU>
+@{
+    ViewBag.Title = "Duyurular";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<head>
+    <title>Duyurular</title>
+</head>
+
+<h2>Duyurular</h2>
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>KATEGORİ</th>                
+        <th>İÇERİK</th>
+        <th>TARİH</th>
+    </tr>
+    @foreach (var dyr in Model)
+    {
+        <tr>
+            <td>@dyr.KATEGORI</td>
+            <td>@dyr.ICERIK</td>                        
+            <td>@Convert.ToDateTime(dyr.TARIH).ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
+

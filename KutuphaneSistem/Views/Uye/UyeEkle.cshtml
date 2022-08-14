@@ -1,0 +1,50 @@
+﻿@model KutuphaneSistem.Models.Entity.TBLUYELER
+
+@{
+    ViewBag.Title = "UyeEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<head>
+    <title>Üye Ekle</title>
+</head>
+<form class="form-group" method="post">
+    <br />
+    <div>
+        <label>Adı</label>
+        @Html.TextBoxFor(u => u.AD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.AD, "", new { @style = "color:red" })
+    </div><br />
+    <div>
+        <label>Soyadı</label>
+        @Html.TextBoxFor(u => u.SOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SOYAD, "", new { @style = "color:red" })
+    </div><br />
+    <div>
+        <label>Mail</label>
+        @Html.TextBoxFor(u => u.MAIL, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.MAIL, "", new { @style = "color:red" })
+    </div><br />
+    <div>
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(u => u.KULLANICIADI, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.KULLANICIADI, "", new { @style = "color:red" })
+    </div><br />
+    <div>
+        <label>Şifre</label>
+        @Html.TextBoxFor(u => u.SIFRE, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.SIFRE, "", new { @style = "color:red" })
+    </div><br />
+    <div>
+        <label>Fotoğraf Linki</label>
+        @Html.TextBoxFor(u => u.FOTOGRAF, new { @class = "form-control" })
+    </div><br />
+    <div>
+        <label>Telefon</label>
+        @Html.TextBoxFor(u => u.TELEFON, new { @class = "form-control" })
+    </div><br />
+    <div>
+        <label>Okul</label>
+        @Html.TextBoxFor(u => u.OKUL, new { @class = "form-control" })
+    </div><br />
+    <button class="btn btn-info" id="btn1">Ekle</button>
+</form>

@@ -1,0 +1,27 @@
+﻿@model KutuphaneSistem.Models.Entity.TBLKATEGORİ
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<head>
+    <title>Güncelle</title>
+</head>
+@using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
+{
+    @*<div style="margin-bottom:15px"></div>*@
+    <br/>
+    <div class="form-group">
+        @*@Html.LabelFor(k => k.ID)*@
+        <label>KATEGORİ NUMARASI</label>
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        @*@Html.LabelFor(k=>k.AD)*@
+        <label>KATEGORİ ADI</label>
+        @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+
+    </div>
+    <div>
+        <button class="btn btn-warning">GÜNCELLE</button>
+    </div>
+}
+

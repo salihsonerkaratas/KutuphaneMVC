@@ -1,0 +1,27 @@
+﻿@model KutuphaneSistem.Models.Entity.TBLADMIN
+
+@{
+    ViewBag.Title = "AdminGuncelle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<head>
+    <title>Admin Güncelle</title>
+</head>
+@using (Html.BeginForm("AdminGuncelle", "Ayar", FormMethod.Post))
+{
+    <br />
+    <div class="form-group">
+        <label>ID</label>
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })<br />
+        <label>Kullanıcı</label>
+        @Html.TextBoxFor(k => k.KULLANICI, new { @class = "form-control" })<br />
+        <label>Şifre</label>
+        @Html.TextBoxFor(k => k.SIFRE, new { @class = "form-control" })<br />
+
+        <label>Yetki</label>
+        @Html.TextBoxFor(k => k.YETKI, new { @class = "form-control" })<br />
+    </div>
+    <div>
+        <button class="btn btn-warning">GÜNCELLE</button>
+    </div>
+}

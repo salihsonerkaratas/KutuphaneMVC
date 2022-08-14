@@ -1,0 +1,32 @@
+﻿@model KutuphaneSistem.Models.Entity.TBLYAZAR
+@{
+    ViewBag.Title = "YazarGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<head>
+    <title>Yazar Güncelle</title>
+</head>
+
+@using (Html.BeginForm("YazarGuncelle", "Yazar", FormMethod.Post))
+{
+    <br />
+    <div class="form-group">
+        <div>
+            <label>Yazar Numarası</label>
+            @Html.TextBoxFor(y => y.ID, new { @class = "form-control" })
+        </div><br />
+        <div>
+            <label>Adı</label>
+            @Html.TextBoxFor(y => y.AD, new { @class = "form-control" })
+        </div><br />
+        <div>
+            <label>Soyadı</label>
+            @Html.TextBoxFor(y => y.SOYAD, new { @class = "form-control" })
+        </div><br />
+        <div>
+            <label>Detay</label>
+            @Html.TextAreaFor(y => y.DETAY, new { @class = "form-control" })
+        </div><br />
+        <button class="btn btn-warning">GÜNCELLE</button>
+    </div>
+}

@@ -1,0 +1,29 @@
+﻿@model KutuphaneSistem.Models.Entity.TBLYAZAR
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<head>
+    <title>Yazar Ekle</title>
+</head>
+
+<form class="form-group" method="post">
+    <br />
+    <div>
+        <label>Adı</label>
+        @Html.TextBoxFor(y => y.AD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.AD)
+    </div>
+    <div style="margin-top:15px">
+        <label>Soyadı</label>
+        @Html.TextBoxFor(y => y.SOYAD, new { @class = "form-control" })
+        @Html.ValidationMessageFor(y => y.SOYAD)
+    </div>
+    <div style="margin-top:15px">
+        <label>Detay</label>
+        @Html.TextAreaFor(y => y.DETAY, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+</form>
